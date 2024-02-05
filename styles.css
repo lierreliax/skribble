@@ -1,0 +1,445 @@
+@import url('https://fonts.cdnfonts.com/css/karma-2');
+
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; 
+}
+  
+.parallax {
+    perspective: 1px;
+    height: 100vh; 
+    width: 100vw; 
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1; 
+}
+
+.layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%; 
+    height: 100%;
+}
+
+.l1 {
+    background-image: url('1st_layer.png');
+    background-size: auto;
+    animation: parallax1 20s infinite ease-in-out; 
+}
+
+.l2 {
+    background-image: url('2nd_layer.png');
+    background-size: auto;
+    animation: parallax2 24s infinite ease-in-out; 
+}
+
+.l3 {
+    background-image: url('3rd_layer.png');
+    background-size: auto;
+    animation: parallax3 28s infinite ease-in-out; 
+}
+
+.l4 {
+    background-image: url('4th_layer.png');
+    background-size: auto;
+    animation: parallax4 32s infinite ease-in-out; 
+}
+
+.l5 {
+    background-image: url('5th_layer.png');
+    background-size: auto;
+    animation: parallax5 36s infinite ease-in-out; 
+}
+
+.l6 {
+    background-image: url('6th_layer.png');
+    background-size: auto;
+    animation: parallax6 40s infinite ease-in-out; 
+}
+
+.l7 {
+    background-image: url('7th_layer.png');
+    background-size: auto;
+    animation: parallax7 44s infinite ease-in-out; 
+}
+
+@keyframes parallax1 {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@keyframes parallax2 {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@keyframes parallax3 {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@keyframes parallax4 {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@keyframes parallax5 {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@keyframes parallax6 {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@keyframes parallax7 {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.l1::before, .l1::after,
+.l2::before, .l2::after,
+.l3::before, .l3::after,
+.l4::before, .l4::after,
+.l5::before, .l5::after,
+.l6::before, .l6::after,
+.l7::before, .l7::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-repeat: repeat-x;
+    background-position: 0 0;
+}
+
+.l1::after, .l2::after, .l3::after, .l4::after, .l5::after, .l6::after, .l7::after {
+    background-position: 100% 0;
+}
+
+   
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    background-color: #ADD8E6; 
+    color: #FFF;
+    font-family: 'Press Start 2P', cursive; 
+    font-size: 20px; 
+}
+
+h1 {
+    font-size: 60px; 
+    text-align: center;
+    color: #333;
+}
+
+#game-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.guess {
+    height: 60px; 
+    width: 60px; 
+    margin: 10px; 
+    cursor: default;
+    font-size: 30px; 
+    border: 3px solid black; 
+    border-radius: 10px; 
+    vertical-align: top;
+    background-color: white;
+}
+
+#alphabet-buttons {
+    width: 800px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: px; 
+}
+
+.button{
+    position:relative;
+    display:inline-block;
+    margin: 20px;
+    border: none;
+    
+  }
+  
+  .button{
+    color:white;
+    font-family:Helvetica, sans-serif;
+    font-weight:bold;
+    font-size: 26px;
+    text-align: center;
+    text-decoration:none;
+    background-color:#9DD3FF;
+    display:block;
+    position:relative;
+    padding:10px 20px;
+    font-family: 'Karma';
+    font-weight: bold;
+    letter-spacing: 6px;
+    
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0); 
+    text-shadow: 1px 2px 2px #000;
+    filter: dropshadow(color=#000, offx=0px, offy=1px); 
+    
+    -webkit-box-shadow:inset 0 1px 0 #cfe9ff, 0 10px 0 #617e96;
+    -moz-box-shadow:inset 0 1px 0 #cfe9ff, 0 10px 0 #617e96;
+    box-shadow:inset 0 1px 0 #cfe9ff, 0 10px 0 #617e96;
+    
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+  }
+  
+  .button:active{
+    top:10px;
+    background-color:#6ba5d4;
+    -webkit-box-shadow:inset 0 1px 0 #cfe9ff, inset 0 -5px 0 #274157;
+    -moz-box-shadow:inset 0 1px 0 #cfe9ff, inset 0 -5px 0 #274157;
+    box-shadow:inset 0 1px 0 #cfe9ff, inset 0 -5px 0 #274157;
+  }
+  
+  .button:after{
+    content:"";
+    height:100%;
+    width:100%;
+    padding:4px;
+    position: absolute;
+    bottom:-15px;
+    left:-4px;
+    z-index:-1;
+    background-color:#2B1800;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+  }
+
+
+/* .button {
+    width: 60px; 
+    height: 60px; 
+    border-radius: 10px; 
+    padding: 15px; 
+    color: #FFF;
+    border: none;
+    cursor: pointer;
+    font-size: 24px; 
+    border: 1px solid #FFF; 
+    background-color: rgba(135, 197, 222, 0.432);
+    transition: background-color 0.3s ease; 
+}
+
+.button:hover {
+    background-color: #ADD8E6; 
+}
+
+.button.correct {
+    background-color: #d3ffd3;
+    color: #333;
+    cursor: default;
+}
+
+.button:disabled {
+    background-color: #fbc3c1;
+    color: #333; 
+    cursor: not-allowed; 
+} */
+
+#question{
+    font-size: 25px; 
+    font-weight: bold;
+    color: #000000;
+}
+
+#difficulty{
+    font-size: 35px; 
+    color: #000000;
+    margin-top: 30px; 
+    justify-content: center;
+    align-items: center;
+    width: 600px; 
+    text-align: center;
+    padding: 15px; 
+    font-weight: bold;
+    border-radius: 10px; 
+    background-color:rgb(255, 255, 255);
+    box-shadow: 2px 2px 5px rgba(238, 232, 232, 0.2);
+}
+
+.lives {
+    display: flex;
+    justify-content: flex-end; /* Align to the right */
+    align-items: center;
+    margin: 20px; /* Adjusted margin */
+    position: fixed; /* Fixed positioning */
+    top: 10px; /* Positioned at the top */
+    right: 10px; /* Positioned with some right margin */
+}
+
+.points {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    color: #fff;
+    font-family: 'Press Start 2P', cursive;
+    background-color: rgba(45, 161, 228, 0.5);
+    padding: 10px;
+    border-radius: 0;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.2); opacity: 0.5; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+
+.life {
+    margin: 0 10px; /* Adjusted margin */
+    font-size: 30px; /* Adjusted font size */
+    color: #f00;
+}
+
+.life.dead {
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.2); opacity: 0.5; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    transform: translate(-50%, -50%);
+    background-color: rgba(40, 50, 197, 0.8);
+    color: #fff;
+    padding: 20px; /* Adjusted padding for a more minimalist look */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    z-index: 1000;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.modal button {
+    font-size: 1.2em; /* Increased font size for bigger buttons */
+    padding: 10px 20px; /* Adjusted padding for bigger buttons */
+    background-color: transparent; /* Transparent background */
+    color: #fff; /* White text color */
+    border: 2px solid #fff; /* White border */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Smooth transition */
+    margin-top: 20px; /* Increased margin for spacing */
+}
+
+.modal button:hover {
+    background-color: #fff; /* White background on hover */
+    color: #000; /* Black text color on hover */
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    backdrop-filter: blur(5px);
+}
+
+#insufficientPointsPopup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 400px; /* Increased width for bigger pop-up */
+    transform: translate(-50%, -50%);
+    background-color: rgba(36, 53, 150, 0.8);
+    color: #fff;
+    padding: 100px; /* Increased padding */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    border-radius: 10px; /* Increased border radius */
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    z-index: 1000;
+    animation: fadeIn 0.5s ease forwards; /* Fade in animation */
+}
+
+#hint-container {
+    font-size: 24px;
+    color: #fff;
+    padding: 10px 20px;
+    background-color: #1c4bb1; /* Bright blue color */
+    border: 2px solid #0a0101; /* White border for 8-bit effect */
+    border-radius: 10px; /* Rounded corners for rounded square look */
+    font-family: 'Press Start 2P', cursive; /* Pixelated font */
+    cursor: pointer; /* Changes the cursor when hovering over the button */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+#hint-container:hover {
+    background-color: #ffffff; /* Change background color on hover */
+    color: #000; /* Change text color on hover */
+}
+
+
+.return-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 9999;
+}
+
+.return-button a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: transparent; /* Transparent background color */
+    color: #ffffff; /* Blue text color */
+    text-decoration: none;
+    border: 2px solid #ffffff; /* Blue border */
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Smooth transition */
+}
+
+.return-button a:hover {
+    background-color: rgba(151, 5, 5, 0.1); /* Transparent blue background color on hover */
+    color: #030303; /* Darker blue text color on hover */
+}

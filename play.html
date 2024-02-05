@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="play.css">
+    <title>SKRIBBLE</title>
+    
+    <div class="return-button">
+        <a href="index.html">HOME</a>
+    </div>
+    
+</head>
+<body>
+    <div class="parallax">
+        <div class="layer l1"></div>
+        <div class="layer l2"></div>
+        <div class="layer l3"></div>
+        <div class="layer l4"></div>
+        <div class="layer l5"></div>
+        <div class="layer l6"></div>
+        <div class="layer l7"></div>
+    </div>
+
+    <div class="main-container">
+        <div id="left-container">
+            <div id="game-area">
+    
+                <p id="question"> Question: </p>
+                <div id="guesses" class="button-container"></div>
+               
+                
+                <div id="alphabet-buttons" class="button-container"></div>
+    
+                  
+                </div> 
+            </div>
+        </div>
+
+        <div class="right-container">
+
+            <div class="gameName">
+                <span>S</span>
+                <span>K</span>
+                <span>R</span>
+                <span>I</span>
+                <span>B</span>
+                <span>B</span>
+                <span>L</span>
+                <span>E</span>
+            </div>
+
+            <div class="card">
+                <p id = difficulty> Easy Round</p>
+    
+            </div>
+
+            <div class="stats-container">
+                <div id="lives-container" >
+                    <p> <strong>Lives: </strong> 3 </p>
+                </div>
+
+                <div class="points" >
+                    <p id="score"><strong>Points:</strong> 0 </p>
+                </div>
+                
+
+                <button id="hint-container"  onclick="showHintPopup()">
+                    <strong>Hint:</strong> 3
+                </button>
+
+            </div>
+                
+                
+ 
+        </div>
+
+
+    </div>
+
+        
+    <div id="hintPopup" class="modal"> 
+        <p>Choose hint:</p>
+        <button onclick="useHint('consonant')">Consonant</button>
+        <button onclick="useHint('vowel')">Vowel</button>
+    </div>
+
+    <div id="insufficientPointsPopup" class="modal">
+        <div class="popup-content">
+            <p>Insufficient Points! You need at least 25 points to use a hint.</p>
+            <button onclick="closeInsufficientPointsPopup()">OK</button>
+        </div>
+    </div>
+
+    
+
+    <div id="gameOverModal" class="modal">
+        <p>Game Over!</p>
+        <button onclick="restartGame()">Play Again</button>
+    </div>
+    <div id="overlay" class="overlay"></div>
+
+
+    <div id="guessedWordModal" class="modal">
+        <p>You have guessed the word!</p>
+        <p id = "guessedWord">asd</p>
+        <button id = "nextWordBtn">Next Word</button>
+    </div>
+
+
+        
+        
+    </div>
+
+    <footer>
+        <p> &copy; 2024. All Rights Reserved.</p>
+        <p> Daguna </p>
+        <p> Delfin </p>
+        <p> Laoke </p>
+        <p> Rivera </p>
+      </footer>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

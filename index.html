@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <style>
+  
+  </style>
+</head>
+<body>
+
+
+  <div class="main-container">
+
+    <div class="container">
+        <div class="gameName">
+            <span>S</span>
+            <span>K</span>
+            <span>R</span>
+            <span>I</span>
+            <span>B</span>
+            <span>B</span>
+            <span>L</span>
+            <span>E</span>
+        </div>
+
+
+        <div class="button-container">
+
+        <button class="button" onclick="goToNextPage()"> Play </button>
+        <button class="button" onclick="moveToRules()"> Rules </button>
+        <button class="button" onclick="moveToAbout()"> About  </button>
+        </div>
+        
+
+        </div>
+
+    </div>
+</div>
+
+<div class="popup-container" id="rulesContainer">
+  <div class="scroll-container">
+      <div class="rules-container">
+          <div class="rules-title">
+              <p>RULES OF THE GAME</p>
+              <h2>
+                  - Maximum of 3 hints and 3 lives. <br>
+                  - Using a hint deducts 25 points from the score. <br>
+                  - Correct answers earn 10 points each. <br>
+                  - Three rounds: easy, moderate, difficult. <br>
+                  - Player must complete 10 questions per round to advance. <br>
+                  - Score is cumulative across all rounds. <br>
+              </h2>
+          </div>
+          <button class="button" onclick="CenterRules()">Close</button>
+      </div>
+  </div>
+</div>
+
+<div class="popup-container" id="aboutContainer">
+  <div class="scroll-container">
+      <div class="rules-container">
+          <div class="rules-title">
+              <p>ABOUT THE GAME</p>
+              <h2>
+                Step into the mystical pine forest under the mesmerizing night sky in 'Skribble.' 
+                The dark and cozy atmosphere is chosen to help you concentrate on solving the questions.
+                In 'Skribble,' you're not just playing a game – you're unraveling the secrets hidden in the wintry shadows, making every move a step closer to discovering the untold stories within.
+              </h2>
+          </div>
+          <button class="button" onclick="CenterAbout()">Close</button>
+      </div>
+  </div>
+</div>
+
+<footer>
+  <p> &copy; 2024. All Rights Reserved.</p>
+  <p> Daguna </p>
+  <p> Delfin </p>
+  <p> Laoke </p>
+  <p> Rivera </p>
+</footer>
+
+<script>
+  function goToNextPage() {
+    document.body.style.opacity = '0';
+
+    // Delay navigation to the next page
+    setTimeout(function() {
+      window.location.href = "play.html";
+    }, 500); // Adjust the delay (in milliseconds) to match the transition duration
+    }
+
+
+  function moveToRules() {
+      document.querySelector('.container').style.transform = 'translateX(-40%)';
+      document.getElementById('rulesContainer').style.display = 'block';
+
+      var popupContainer = document.getElementById('rulesContainer');
+      setTimeout(function () {
+          popupContainer.classList.add('show');
+      }, 10);
+  }
+
+  function moveToAbout() {
+      document.querySelector('.container').style.transform = 'translateX(-40%)';
+      document.getElementById('aboutContainer').style.display = 'block';
+
+      var popupContainer = document.getElementById('aboutContainer');
+      setTimeout(function () {
+          popupContainer.classList.add('show');
+      }, 10);
+  }
+
+  function CenterRules() {
+      document.querySelector('.container').style.transform = 'translateX(0)';
+      document.getElementById('rulesContainer').style.display = 'none';
+
+      var popupContainer = document.getElementById('rulesContainer');
+      popupContainer.classList.remove('show');
+
+      setTimeout(function () {
+          popupContainer.style.display = 'none';
+      }, 500);
+  }
+
+  function CenterAbout() {
+      document.querySelector('.container').style.transform = 'translateX(0)';
+      document.getElementById('aboutContainer').style.display = 'none';
+
+      var popupContainer = document.getElementById('aboutContainer');
+      popupContainer.classList.remove('show');
+
+      setTimeout(function () {
+          popupContainer.style.display = 'none';
+      }, 500);
+  }
+
+
+    // Animation for game title
+    const spans = document.querySelectorAll('.gameName span');
+
+    spans.forEach((span, idx) => {
+        span.addEventListener('click', (e) => {
+            e.target.classList.add('active');
+        });
+        span.addEventListener('animationend', (e) => {
+            e.target.classList.remove('active');
+        });
+        
+        // Initial animation
+        setTimeout(() => {
+            span.classList.add('active');
+        }, 750 * (idx+1))
+    });
+
+  </script>
+</body>
+</html>
